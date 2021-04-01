@@ -42,6 +42,7 @@ function App() {
         <ManageProduct/>
         </Route>
         
+
         <PrivateRoute path="/register/:key">
         <Orders/>
         </PrivateRoute>

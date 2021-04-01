@@ -22,7 +22,7 @@ const Orders = () => {
     const history = useHistory()
     const {key} = useParams();
     const [loggedInUser , setLoggedInUser] = useContext(UserContext);
-    const [eventId , setEvent] = useState();
+    const [productId , SetProductId] = useState();
 
     const [input ,setInput] = useState({
         date: '',
@@ -36,12 +36,11 @@ const Orders = () => {
     const inputData = () => {
         fetch('https://blueberry-pudding-92901.herokuapp.com/register/' + key)
         .then(res => res.json())
-        .then(data => setEvent(data))
+        .then(data => SetProductId(data))
     }
-    const {name ,img, price} = eventId ? eventId[0] : []
+    const {name ,img, price} = productId ? productId[0] : []
 
 
-     //form handle.
      const handleSubmit = (e) => {
         const userInfo = {...loggedInUser}
         userInfo.date = input.date;
